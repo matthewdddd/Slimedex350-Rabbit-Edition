@@ -28,7 +28,7 @@ cors_domains:
 [update_manager]
 channel: dev
 refresh_interval: 168
-enable_auto_refresh: False ; because mainsail sets it to true
+enable_auto_refresh: False 
 
 [update_manager mainsail-config]
 type: git_repo
@@ -115,3 +115,17 @@ managed_services: klipper
 info_tags:
   desc=Cartographer Probe
 
+
+# Crowsnest update_manager entry
+[update_manager crowsnest]
+type: git_repo
+path: ~/crowsnest
+origin: https://github.com/mainsail-crew/crowsnest.git
+managed_services: crowsnest
+install_script: tools/pkglist.sh
+[update_manager klipper-backup]
+type: git_repo
+path: ~/klipper-backup
+origin: https://github.com/Staubgeborener/klipper-backup.git
+managed_services: moonraker
+primary_branch: main
